@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<unload unload_date="2015-10-27 14:33:23">
+<sys_remote_update_set action="INSERT_OR_UPDATE">
+<application display_value="Global">global</application>
+<application_name>Global</application_name>
+<application_scope>global</application_scope>
+<application_version/>
+<collisions/>
+<commit_date/>
+<deleted/>
+<description>Adding a header message to ServiceNow to give notification about platform updates, news or any other info that your customer/end-users should be aware of. Well, this is implemented on HI.Service-now.com.</description>
+<inserted/>
+<name>Show Header Information</name>
+<origin_sys_id/>
+<release_date/>
+<remote_sys_id>ca85feea4f578600495db5e18110c7c5</remote_sys_id>
+<state>loaded</state>
+<summary/>
+<sys_created_by>artemis</sys_created_by>
+<sys_created_on>2015-10-27 14:33:23</sys_created_on>
+<sys_id>2106b22e4f578600495db5e18110c75d</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_updated_by>artemis</sys_updated_by>
+<sys_updated_on>2015-10-27 14:33:23</sys_updated_on>
+<update_set display_value=""/>
+<update_source display_value=""/>
+<updated/>
+</sys_remote_update_set>
+<sys_update_xml action="INSERT_OR_UPDATE">
+<action>INSERT_OR_UPDATE</action>
+<application display_value="Global">global</application>
+<category>customer</category>
+<comments/>
+<name>sys_ui_script_5c1bed5a4f538600495db5e18110c759</name>
+<payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;record_update table="sys_ui_script"&gt;&lt;sys_ui_script action="INSERT_OR_UPDATE"&gt;&lt;active&gt;true&lt;/active&gt;&lt;description&gt;Adding a header message to ServiceNow to give notification about platform updates, news or any other info that your customer/end-users should be aware of. Well, this is implemented on HI.Service-now.com.&lt;/description&gt;&lt;global&gt;true&lt;/global&gt;&lt;name&gt;Show Header Information&lt;/name&gt;&lt;script&gt;&lt;![CDATA[addLoadEvent(function(){
+try{
+if(g_user.hasRoles()){
+//Knowledge Message
+	var knowledgeMessage = "&lt;a target='gsft_main' href='$knowledge.do?'id='knowledgeMessageText' style='margin-right: 20px; font-size: 100%; color: #000;text-decoration: underline;'&gt;&lt;span style='margin-right:1%;'&gt;&lt;i class='icon-alert'&gt;&lt;/i&gt;&lt;/span&gt;&lt;span&gt;Recent ServiceNow Updates&lt;/span&gt;&lt;/a&gt;"; //);
+$('textsearch').insert({before:knowledgeMessage});
+}
+}catch(e){}
+});]]&gt;&lt;/script&gt;&lt;script_name/&gt;&lt;sys_class_name&gt;sys_ui_script&lt;/sys_class_name&gt;&lt;sys_created_by&gt;artemis&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2015-10-26 14:28:02&lt;/sys_created_on&gt;&lt;sys_customer_update&gt;true&lt;/sys_customer_update&gt;&lt;sys_id&gt;5c1bed5a4f538600495db5e18110c759&lt;/sys_id&gt;&lt;sys_mod_count&gt;5&lt;/sys_mod_count&gt;&lt;sys_name&gt;Show Header Information&lt;/sys_name&gt;&lt;sys_package display_value="Global" source="global"&gt;global&lt;/sys_package&gt;&lt;sys_policy/&gt;&lt;sys_replace_on_upgrade&gt;false&lt;/sys_replace_on_upgrade&gt;&lt;sys_scope display_value="Global"&gt;global&lt;/sys_scope&gt;&lt;sys_update_name&gt;sys_ui_script_5c1bed5a4f538600495db5e18110c759&lt;/sys_update_name&gt;&lt;sys_updated_by&gt;artemis&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2015-10-27 14:31:47&lt;/sys_updated_on&gt;&lt;use_scoped_format&gt;false&lt;/use_scoped_format&gt;&lt;/sys_ui_script&gt;&lt;/record_update&gt;</payload>
+<remote_update_set display_value="Show Header Information">2106b22e4f578600495db5e18110c75d</remote_update_set>
+<replace_on_upgrade>false</replace_on_upgrade>
+<sys_created_by>artemis</sys_created_by>
+<sys_created_on>2015-10-27 14:33:23</sys_created_on>
+<sys_id>6106b22e4f578600495db5e18110c75d</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_updated_by>artemis</sys_updated_by>
+<sys_updated_on>2015-10-27 14:33:23</sys_updated_on>
+<table/>
+<target_name>Show Header Information</target_name>
+<type>UI Script</type>
+<update_domain>global</update_domain>
+<update_set display_value=""/>
+<view/>
+</sys_update_xml>
+</unload>
