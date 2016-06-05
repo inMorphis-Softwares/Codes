@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<unload unload_date="2016-06-05 11:43:05">
+<sys_remote_update_set action="INSERT_OR_UPDATE">
+<application display_value="Global">global</application>
+<application_name>Global</application_name>
+<application_scope>global</application_scope>
+<application_version/>
+<collisions/>
+<commit_date/>
+<deleted/>
+<description> Forget about RIGHT CLICK and SAVE. Use only "CTRL+S" old functionality </description>
+<inserted/>
+<name>SaveNow</name>
+<origin_sys_id/>
+<release_date/>
+<remote_sys_id>29df91460f77d600184f4e9ce1050eff</remote_sys_id>
+<state>loaded</state>
+<summary/>
+<sys_class_name>sys_remote_update_set</sys_class_name>
+<sys_created_by>Akash.Rajput</sys_created_by>
+<sys_created_on>2016-06-05 11:43:04</sys_created_on>
+<sys_id>1fff99420f77d600184f4e9ce1050ead</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_updated_by>Akash.Rajput</sys_updated_by>
+<sys_updated_on>2016-06-05 11:43:04</sys_updated_on>
+<update_set display_value=""/>
+<update_source display_value=""/>
+<updated/>
+</sys_remote_update_set>
+<sys_update_xml action="INSERT_OR_UPDATE">
+<action>INSERT_OR_UPDATE</action>
+<application display_value="SaveNow">0f1b99420f77d600184f4e9ce1050ea8</application>
+<category>customer</category>
+<comments/>
+<name>sys_ui_script_4a8b51060f77d600184f4e9ce1050e25</name>
+<payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;record_update table="sys_ui_script"&gt;&lt;sys_ui_script action="INSERT_OR_UPDATE"&gt;&lt;active&gt;true&lt;/active&gt;&lt;description&gt;Get rid of saving via RIGHT click and select save. Now, have the same old functionality of CTRL+S to save. &lt;/description&gt;&lt;global&gt;true&lt;/global&gt;&lt;name&gt;savenow&lt;/name&gt;&lt;script&gt;&lt;![CDATA[/*
+Add Event Listener on key down event for CTRL+S 
+*/
+document.addEventListener("keydown", function(event) {
+	 
+	//keycode 83 is for s
+	//identify main key ==&gt; metakey || ctrlkey
+  if ((window.navigator.platform.toUpperCase().indexOf('MAC')&gt;=0 ? event.metaKey : event.ctrlKey)  &amp;&amp; event.keyCode == 83) {
+	  
+	  //Get the event value, "event.which" is for FF
+	  event=event||window.event||event.which;
+	  
+	  //Prevent the dafault function called by CTRL+S
+	  event.preventDefault();
+    	
+	  //Get full element of the form
+	  var _form=g_form.getFormElement();
+	  
+	  //Get the sys_id value from the URL to check which UI Action needs to be called
+	  var _sys=getParameterFromURL("sys_id").toString();
+	  
+	  //Based on value of sys_id, we will decide that which UI Action needs to be called, either for insert or Update
+	  var _btnAction=_sys=="-1"?"sysverb_insert_and_stay":"sysverb_update_and_stay";
+	  
+	  //call the UI Action
+	  gsftSubmit(null, _form, _btnAction);
+	  
+  }
+}, false);]]&gt;&lt;/script&gt;&lt;script_name/&gt;&lt;sys_class_name&gt;sys_ui_script&lt;/sys_class_name&gt;&lt;sys_created_by&gt;Akash.Rajput&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2016-06-05 11:27:14&lt;/sys_created_on&gt;&lt;sys_customer_update&gt;true&lt;/sys_customer_update&gt;&lt;sys_id&gt;4a8b51060f77d600184f4e9ce1050e25&lt;/sys_id&gt;&lt;sys_mod_count&gt;0&lt;/sys_mod_count&gt;&lt;sys_name&gt;savenow&lt;/sys_name&gt;&lt;sys_package display_value="SaveNow" source="0f1b99420f77d600184f4e9ce1050ea8"&gt;0f1b99420f77d600184f4e9ce1050ea8&lt;/sys_package&gt;&lt;sys_policy/&gt;&lt;sys_replace_on_upgrade&gt;false&lt;/sys_replace_on_upgrade&gt;&lt;sys_scope display_value="SaveNow"&gt;0f1b99420f77d600184f4e9ce1050ea8&lt;/sys_scope&gt;&lt;sys_update_name&gt;sys_ui_script_4a8b51060f77d600184f4e9ce1050e25&lt;/sys_update_name&gt;&lt;sys_updated_by&gt;Akash.Rajput&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2016-06-05 11:27:14&lt;/sys_updated_on&gt;&lt;use_scoped_format&gt;false&lt;/use_scoped_format&gt;&lt;/sys_ui_script&gt;&lt;/record_update&gt;</payload>
+<remote_update_set display_value="SaveNow">1fff99420f77d600184f4e9ce1050ead</remote_update_set>
+<replace_on_upgrade>false</replace_on_upgrade>
+<sys_created_by>Akash.Rajput</sys_created_by>
+<sys_created_on>2016-06-05 11:43:04</sys_created_on>
+<sys_id>13ff99420f77d600184f4e9ce1050eae</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_updated_by>Akash.Rajput</sys_updated_by>
+<sys_updated_on>2016-06-05 11:43:04</sys_updated_on>
+<table/>
+<target_name>savenow</target_name>
+<type>UI Script</type>
+<update_domain>global</update_domain>
+<update_set display_value=""/>
+<view/>
+</sys_update_xml>
+<sys_update_xml action="INSERT_OR_UPDATE">
+<action>INSERT_OR_UPDATE</action>
+<application display_value="SaveNow">0f1b99420f77d600184f4e9ce1050ea8</application>
+<category>customer</category>
+<comments/>
+<name>sys_app_0f1b99420f77d600184f4e9ce1050ea8</name>
+<payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_app"><sys_app action="INSERT_OR_UPDATE"><active>true</active><enforce_license>log</enforce_license><js_level>helsinki_es5</js_level><licensable>true</licensable><logo/><menu/><name>SaveNow</name><private>false</private><restrict_table_access>false</restrict_table_access><runtime_access_tracking>permissive</runtime_access_tracking><scope>global</scope><scoped_administration>false</scoped_administration><short_description/><source>0f1b99420f77d600184f4e9ce1050ea8</source><store_correlation_id/><store_url/><sys_class_name>sys_app</sys_class_name><sys_code/><sys_created_by>Akash.Rajput</sys_created_by><sys_created_on>2016-06-05 11:21:45</sys_created_on><sys_id>0f1b99420f77d600184f4e9ce1050ea8</sys_id><sys_mod_count>0</sys_mod_count><sys_updated_by>Akash.Rajput</sys_updated_by><sys_updated_on>2016-06-05 11:21:45</sys_updated_on><template/><trackable>true</trackable><user_role/><vendor/><vendor_prefix/><version>1.0.0</version></sys_app></record_update>]]></payload>
+<remote_update_set display_value="SaveNow">1fff99420f77d600184f4e9ce1050ead</remote_update_set>
+<replace_on_upgrade>false</replace_on_upgrade>
+<sys_created_by>Akash.Rajput</sys_created_by>
+<sys_created_on>2016-06-05 11:43:04</sys_created_on>
+<sys_id>9fff99420f77d600184f4e9ce1050ead</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_updated_by>Akash.Rajput</sys_updated_by>
+<sys_updated_on>2016-06-05 11:43:04</sys_updated_on>
+<table/>
+<target_name>SaveNow</target_name>
+<type>Custom Application</type>
+<update_domain>global</update_domain>
+<update_set display_value=""/>
+<view/>
+</sys_update_xml>
+<sys_update_xml action="INSERT_OR_UPDATE">
+<action>INSERT_OR_UPDATE</action>
+<application display_value="SaveNow">0f1b99420f77d600184f4e9ce1050ea8</application>
+<category>customer</category>
+<comments/>
+<name>sys_ui_script_138c15c20f77d600184f4e9ce1050e8b</name>
+<payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;record_update table="sys_ui_script"&gt;&lt;sys_ui_script action="INSERT_OR_UPDATE"&gt;&lt;active&gt;true&lt;/active&gt;&lt;description&gt;get the value from URL for given parameter.&amp;#13;
+call getParameterFromURL(paramname) to fectch the value of parameter from URL&lt;/description&gt;&lt;global&gt;true&lt;/global&gt;&lt;name&gt;getParameterFromURL&lt;/name&gt;&lt;script&gt;&lt;![CDATA[function getParameterFromURL(_parm) { 
+  var params = window.location.search.substr(1).split('&amp;');
+ 
+  for (var i = 0; i &lt; params.length; i++) {
+    var p=params[i].split('=');
+	if (p[0] == _parm) {
+	  return decodeURIComponent(p[1]);
+	}
+  }
+  return false;
+}]]&gt;&lt;/script&gt;&lt;script_name/&gt;&lt;sys_class_name&gt;sys_ui_script&lt;/sys_class_name&gt;&lt;sys_created_by&gt;Akash.Rajput&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2016-06-05 11:30:14&lt;/sys_created_on&gt;&lt;sys_customer_update&gt;true&lt;/sys_customer_update&gt;&lt;sys_id&gt;138c15c20f77d600184f4e9ce1050e8b&lt;/sys_id&gt;&lt;sys_mod_count&gt;0&lt;/sys_mod_count&gt;&lt;sys_name&gt;getParameterFromURL&lt;/sys_name&gt;&lt;sys_package display_value="SaveNow" source="0f1b99420f77d600184f4e9ce1050ea8"&gt;0f1b99420f77d600184f4e9ce1050ea8&lt;/sys_package&gt;&lt;sys_policy/&gt;&lt;sys_replace_on_upgrade&gt;false&lt;/sys_replace_on_upgrade&gt;&lt;sys_scope display_value="SaveNow"&gt;0f1b99420f77d600184f4e9ce1050ea8&lt;/sys_scope&gt;&lt;sys_update_name&gt;sys_ui_script_138c15c20f77d600184f4e9ce1050e8b&lt;/sys_update_name&gt;&lt;sys_updated_by&gt;Akash.Rajput&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2016-06-05 11:30:14&lt;/sys_updated_on&gt;&lt;use_scoped_format&gt;false&lt;/use_scoped_format&gt;&lt;/sys_ui_script&gt;&lt;/record_update&gt;</payload>
+<remote_update_set display_value="SaveNow">1fff99420f77d600184f4e9ce1050ead</remote_update_set>
+<replace_on_upgrade>false</replace_on_upgrade>
+<sys_created_by>Akash.Rajput</sys_created_by>
+<sys_created_on>2016-06-05 11:43:04</sys_created_on>
+<sys_id>dfff99420f77d600184f4e9ce1050ead</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_updated_by>Akash.Rajput</sys_updated_by>
+<sys_updated_on>2016-06-05 11:43:04</sys_updated_on>
+<table/>
+<target_name>getParameterFromURL</target_name>
+<type>UI Script</type>
+<update_domain>global</update_domain>
+<update_set display_value=""/>
+<view/>
+</sys_update_xml>
+</unload>
