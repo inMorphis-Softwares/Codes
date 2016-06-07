@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<j:jelly trim="false" xmlns:j="jelly:core" xmlns:g="glide" xmlns:j2="null" xmlns:g2="null">
+	
+	<div class="col-md-4 col-md-offset-4">
+		<strong>Visitor's %age</strong>
+                    <div id="gauge" class="200x160px"></div>
+	</div>
+
+<script src="raphael.jsdbx" />
+	<script src="justgage.jsdbx" />
+
+<g2:set_if var="jvar_percent" test="$[current.u_visitors!='']" true="$[current.u_visitors]" false="0" />
+<script>
+	function jq(myid) { 
+    return "#" + myid.replace( /(:|\.|\[|\]|,)/g, "\\$1" );
+	}
+		
+  var g = new JustGage({
+    id: "gauge",
+    value: $[jvar_percent],
+    min: 0,
+    max: 100,
+    title: "Visitors",
+	gaugeWidthScale: 0.6,
+    counter: true,
+    formatNumber: true,
+	relativeGaugeSize: true
+  });
+	
+		$j(document).ready(function(){
+			$j(jq("incident.u_visitors")).change(function() {
+	           if($j(this).val() > 100 || $j(this).val() ${AMP}lt; 0)
+				{
+				alert("Can't input more than 100 or less than 0");
+				g_form.setValue("u_visitors","");
+				
+				}
+				else{
+					  g.refresh(g_form.getValue("u_visitors"));
+				}
+				
+			});
+		});
+
+</script>
+
+</j:jelly>
