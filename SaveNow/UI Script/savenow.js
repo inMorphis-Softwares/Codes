@@ -10,6 +10,11 @@ document.addEventListener("keydown", function(event) {
 	  //Get the event value, "event.which" is for FF
 	  event=event||window.event||event.which;
 	  
+	  //stopPropagation works only in FF
+	   if (event.stopPropagation) {
+		event.stopPropagation();
+	  }
+	  
 	  //Prevent the dafault function called by CTRL+S
 	  event.preventDefault();
     	
